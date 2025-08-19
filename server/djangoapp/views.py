@@ -134,7 +134,7 @@ def get_cars(request):
         cars.append({"CarModel": car_model.name, "CarMake": car_model.car_make.name})
     return JsonResponse({"CarModels":cars})
 
-    def add_review(request):
+def add_review(request):
     if(request.user.is_anonymous == False):
         data = json.loads(request.body)
         try:
