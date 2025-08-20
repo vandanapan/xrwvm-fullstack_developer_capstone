@@ -16,7 +16,8 @@ from django.views.decorators.csrf import csrf_exempt
 from .restapis import get_request, analyze_review_sentiments, post_review
 from .models import CarMake, CarModel
 from .populate import initiate
-
+# Module import
+from .restapis import get_request, analyze_review_sentiments, post_review, searchcars_request
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -145,8 +146,7 @@ def add_review(request):
     else:
         return JsonResponse({"status":403,"message":"Unauthorized"})
 
-# Module import
-from .restapis import get_request, analyze_review_sentiments, post_review, searchcars_request
+
 
 # Code for the view
 def get_inventory(request, dealer_id):
