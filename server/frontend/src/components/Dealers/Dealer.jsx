@@ -15,7 +15,7 @@ const Dealer = () => {
   const [reviews, setReviews] = useState([]);
   const [unreviewed, setUnreviewed] = useState(false);
   const [postReview, setPostReview] = useState(<></>)
-
+  	  
   let curr_url = window.location.href;
   let root_url = curr_url.substring(0,curr_url.indexOf("dealer"));
   let params = useParams();
@@ -73,6 +73,7 @@ return(
       <div style={{marginTop:"10px"}}>
       <h1 style={{color:"grey"}}>{dealer.full_name}{postReview}</h1>
       <h4  style={{color:"grey"}}>{dealer['city']},{dealer['address']}, Zip - {dealer['zip']}, {dealer['state']} </h4>
+      
       </div>
       <div class="reviews_panel">
       {reviews.length === 0 && unreviewed === false ? (
